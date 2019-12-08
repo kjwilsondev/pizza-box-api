@@ -27,3 +27,11 @@ class DriverList(Resource):
         return save_new_driver(data=data)
 
 # TODO: class Driver(Resource)
+@api.route('/driver')
+class Driver(Resource):
+    @api.doc('get_a_driver', security='apiKey')
+    # TODO: @admin_token_required
+    @api.marshal_list_with(_driver, envelope='data')
+    def get(self):
+        """List all registered users"""
+        return get_a_driver()
