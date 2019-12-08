@@ -12,8 +12,7 @@ class TestUserModel(BaseTestCase):
             email='test@test.com',
             password='test',
             registered_on=datetime.datetime.utcnow(),
-            
-
+            destination=''
         )
         db.session.add(user)
         db.session.commit()
@@ -22,9 +21,9 @@ class TestUserModel(BaseTestCase):
         self.assertTrue(isinstance(auth_token, bytes))
 
     
-    destination = db.Column(db.String(100))
-    num_boxes = db.Column(db.Integer, default=0)
-    completion = db.Column(db.Boolean, default=False)
+    # destination = db.Column(db.String(100))
+    # num_boxes = db.Column(db.Integer, default=0)
+    # completion = db.Column(db.Boolean, default=False)
 
     def test_decode_auth_token(self):
         user = User(
