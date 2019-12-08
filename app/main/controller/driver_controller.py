@@ -25,3 +25,5 @@ class DriverList(Resource):
         """Creates a new User """
         data = request.json
         return save_new_driver(data=data)
+
+# TODO: class Driver(Resource)
