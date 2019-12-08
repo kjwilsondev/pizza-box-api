@@ -100,3 +100,20 @@ rmvirtualenv [name]
   - MAKE SURE YOU HAVE PyJWT AND NOT jwt !!!
 - **Flask-Script**
 - **flask_testing**
+
+## Database Creation
+
+Import
+
+```os
+pip install flask-sqlalchemy
+brew install postgres
+which createdb
+```
+
+Create and start db
+
+```os
+initdb new-db
+pg_ctl -D pizza-db -l logfile start
+```
