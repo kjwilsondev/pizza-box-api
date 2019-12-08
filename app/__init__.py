@@ -23,10 +23,10 @@ authorizations = {
 }
 
 api = Api(blueprint,
-          title='Pizza Box Backend',
+          title='Re.Box Backend',
           version='1.0',
           authorizations=authorizations,
-          description='the resuable pizza box api'
+          description='the resuable food box api'
           )
 
 api.add_namespace(auth_ns)
