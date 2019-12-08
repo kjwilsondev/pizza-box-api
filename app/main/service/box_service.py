@@ -4,15 +4,13 @@ import datetime
 from app.main import db
 from app.main.model.box import Box
 
-
 def save_new_box(data):
     box = Box.query.filter_by(email=data['email']).first()
     if not box:
         new_box = Box(
+            id=str(uuid.uuid4()),
             public_id=str(uuid.uuid4()),
-            email=data['email'],
-            username=data['username'],
-            password=data['password'],
+            trips=data['trips'],
             registered_on=datetime.datetime.utcnow()
         )
         save_changes(new_box)
@@ -41,10 +39,10 @@ def generate_token(box):
         }
         return response_object, 401
 
-def get_all_users():
+def get_all_boxes():
     return Box.query.all()
 
-def get_a_user(public_id):
+def get_a_box(public_id):
     return Box.query.filter_by(public_id=public_id).first()
 
 def save_changes(data):
