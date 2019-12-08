@@ -6,7 +6,7 @@ class AuthDto:
         'email': fields.String(required=True, description='The email address'),
         'password': fields.String(required=True, description='The user password '),
     })
-    
+
 class UserDto:
     api = Namespace('user', description='user operations')
     user = api.model('user', {
@@ -48,4 +48,12 @@ class OrderDto:
         'restaurant': fields.Integer(required=True, description='restaurant id'),
         'boxes_given': fields.Integer(description='number of boxes being given'),
         'boxes_owed': fields.Integer(description='number of boxes user owes')
+    })
+class BoxDto:
+    api = Namespace('box', description='box operations')
+    box = api.model('box', {
+        'id': fields.String(required=True, description='box ids'),
+        'registered_on': fields.String(required=True, description='registration'),
+        'trips': fields.String(required=False, description='trips'),
+        'public_id': fields.String(required=True, description='public id')
     })
