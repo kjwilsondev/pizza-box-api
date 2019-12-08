@@ -15,13 +15,13 @@ class OrderList(Resource):
     # TODO: @admin_token_required
     @api.marshal_list_with(_order, envelope='data')
     def get(self):
-        """List all registered users"""
+        """List all registered orders"""
         return get_all_orders()
 
     @api.doc('create a new order')
     @api.response(201, 'Order successfully created.')
     @api.expect(_order, validate=True)
     def post(self):
-        """Creates a new User"""
+        """Creates a new Order"""
         data = request.json
         return save_new_order(data=data)

@@ -16,7 +16,7 @@ class CleanerList(Resource):
     # TODO: @admin_token_required
     @api.marshal_list_with(_cleaner, envelope='data')
     def get(self):
-        """List all registered users"""
+        """List all registered cleaners"""
         return get_all_cleaners()
 
     # TODO: Create save new cleaner function

@@ -15,14 +15,14 @@ class DriverList(Resource):
     # TODO: @admin_token_required
     @api.marshal_list_with(_driver, envelope='data')
     def get(self):
-        """List all registered users"""
+        """List all registered drivers"""
         return get_all_drivers()
 
     @api.doc('create a new driver')
     @api.response(201, 'Driver successfully created.')
     @api.expect(_driver, validate=True)
     def post(self):
-        """Creates a new User """
+        """Creates a new Driver"""
         data = request.json
         return save_new_driver(data=data)
 

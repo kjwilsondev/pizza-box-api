@@ -15,13 +15,13 @@ class RestaurantList(Resource):
     # TODO: @admin_token_required
     @api.marshal_list_with(_restaurant, envelope='data')
     def get(self):
-        """List all registered users"""
+        """List all registered restaurants"""
         return get_all_restaurants()
 
     @api.doc('create a new restaurant')
     @api.response(201, 'Restaurant successfully created.')
     @api.expect(_restaurant, validate=True)
     def post(self):
-        """Creates a new User """
+        """Creates a new Restaurant"""
         data = request.json
         return save_new_restaurant(data=data)
