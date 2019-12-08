@@ -3,7 +3,8 @@ from flask_restplus import Resource
 
 from ..util.dto import CleanerDto
 from ..util.decorator import token_required, admin_token_required
-from ..service.cleaner_service import save_new_cleaner, get_all_cleaners, get_a_cleaner
+# from ..service.cleaner_service import save_new_cleaner, get_all_cleaners, get_a_cleaner
+from ..service.cleaner_service import get_all_cleaners
 from functools import wraps
 
 api = CleanerDto.api
@@ -18,10 +19,11 @@ class CleanerList(Resource):
         """List all registered users"""
         return get_all_cleaners()
 
-    @api.doc('create a new cleaner')
-    @api.response(201, 'Cleaner successfully created.')
-    @api.expect(_cleaner, validate=True)
-    def post(self):
-        """Creates a new User """
-        data = request.json
-        return save_new_cleaner(data=data)
+    # TODO: Create save new cleaner function
+    # @api.doc('create a new cleaner')
+    # @api.response(201, 'Cleaner successfully created.')
+    # @api.expect(_cleaner, validate=True)
+    # def post(self):
+    #     """Creates a new User """
+    #     data = request.json
+    #     return save_new_cleaner(data=data)
