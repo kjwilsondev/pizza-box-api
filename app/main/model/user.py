@@ -16,6 +16,7 @@ class User(db.Model):
     public_id = db.Column(db.String(100), unique=True)
     username = db.Column(db.String(50), unique=True)
     password_hash = db.Column(db.String(100))
+    grubhub_id = db.Column(db.Integer)
 
     @property
     def password(self):
