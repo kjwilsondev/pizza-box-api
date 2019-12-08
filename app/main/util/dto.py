@@ -23,6 +23,19 @@ class DriverDto:
         'username': fields.String(required=True, description='driver username'),
         'password': fields.String(required=True, description='driver password'),
         'public_id': fields.String(description='driver Identifier'),
-        'destination': fields.String(description='driver destination'),
         'num_boxes': fields.Integer(description='driver num of boxes')
+    })
+
+class RestaurantDto:
+    api = Namespace('restaurant', description='restaurant operations')
+    restaurant = api.model('restaurant', {
+        'name': fields.String(required=True, description='restaurant name'),
+        'num_boxes': fields.Integer(description='restaurant num of boxes')
+    })
+
+class CleanerDto:
+    api = Namespace('cleaner', description='cleaner operations')
+    cleaner = api.model('cleaner', {
+        'name': fields.String(required=True, description='cleaner name'),
+        'num_boxes': fields.Integer(description='cleaner num of boxes')
     })

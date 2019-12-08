@@ -7,7 +7,7 @@ import jwt
 # Box class inherits from db.Model class which declares the class as a model for sqlalchemy
 class Box(db.Model):
     """ Box Model for storing box related details """
-    __tablename__ = "user"
+    __tablename__ = "box"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     registered_on = db.Column(db.DateTime, nullable=False)

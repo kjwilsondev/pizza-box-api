@@ -7,7 +7,7 @@ import jwt
 # Driver class inherits from db.Model class which declares the class as a model for sqlalchemy
 class Driver(db.Model):
     """ Driver Model for storing Driver related details """
-    __tablename__ = "Driver"
+    __tablename__ = "driver"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(255), unique=True, nullable=False)
@@ -16,8 +16,7 @@ class Driver(db.Model):
     public_id = db.Column(db.String(100), unique=True)
     username = db.Column(db.String(50), unique=True)
     password_hash = db.Column(db.String(100))
-    destination = db.Column(db.String(100))
-    num_boxes = db.Column(db.Integer, default=0)
+    num_boxes = db.Column(db.Integer, default=0) # number of boxes currently on driver 
 
     @property
     def password(self):
