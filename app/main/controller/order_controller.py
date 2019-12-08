@@ -3,7 +3,7 @@ from flask_restplus import Resource
 
 from ..util.dto import OrderDto
 from ..util.decorator import token_required, admin_token_required
-from ..service.order_service import save_new_order, get_all_orders, get_a_order
+from ..service.order_service import save_new_order, get_all_orders, get_an_order
 from functools import wraps
 
 api = OrderDto.api
@@ -22,6 +22,6 @@ class OrderList(Resource):
     @api.response(201, 'Order successfully created.')
     @api.expect(_order, validate=True)
     def post(self):
-        """Creates a new User """
+        """Creates a new User"""
         data = request.json
         return save_new_order(data=data)

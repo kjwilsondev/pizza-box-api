@@ -39,3 +39,13 @@ class CleanerDto:
         'name': fields.String(required=True, description='cleaner name'),
         'num_boxes': fields.Integer(description='cleaner num of boxes')
     })
+
+class OrderDto:
+    api = Namespace('order', description='order operations')
+    order = api.model('order', {
+        'grubhub_user': fields.Integer(required=True, description='grubhub user id'),
+        'grubhub_driver': fields.Integer(required=True, description='grubhub driver id'),
+        'restaurant': fields.Integer(required=True, description='restaurant id'),
+        'boxes_given': fields.Integer(description='number of boxes being given'),
+        'boxes_owed': fields.Integer(description='number of boxes user owes')
+    })

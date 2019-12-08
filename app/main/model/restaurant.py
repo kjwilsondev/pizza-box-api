@@ -1,8 +1,5 @@
-from .. import db, flask_bcrypt
+from .. import db
 import datetime
-from app.main.model.blacklist import BlacklistToken
-from ..config import key
-import jwt
 
 class Restaurant(db.Model):
     __tablename__ = "restaurant"
