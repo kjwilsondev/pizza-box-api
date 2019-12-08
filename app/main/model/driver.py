@@ -19,7 +19,6 @@ class Driver(db.Model):
     password_hash = db.Column(db.String(100))
     destination = db.Column(db.String(100))
     num_boxes = db.Column(db.Integer, default=0)
-    completion = db.Column(db.Boolean, default=False)
 
     @property
     def password(self):
