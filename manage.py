@@ -6,6 +6,7 @@ from flask_script import Manager
 
 from app import blueprint
 from app.main.model import user
+from app.main.model import driver
 from app.main.model import blacklist
 
 # creates the application instance with the required parameter

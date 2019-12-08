@@ -3,7 +3,6 @@ import datetime
 from app.main.model.blacklist import BlacklistToken
 from ..config import key
 import jwt
-from box import Box
 
 # Driver class inherits from db.Model class which declares the class as a model for sqlalchemy
 class Driver(db.Model):
