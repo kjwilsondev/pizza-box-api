@@ -55,5 +55,6 @@ class BoxDto:
         'id': fields.String(required=True, description='box ids'),
         'registered_on': fields.String(required=True, description='registration'),
         'trips': fields.String(required=False, description='trips'),
+        'driver': fields.String(required=False, description='driver'),
         'public_id': fields.String(required=True, description='public id')
     })

@@ -46,7 +46,7 @@ class Box(Resource):
 
     # UPDATE
     # update box location
-    @api.doc('delete a box', security='apiKey')
+    @api.doc('update a box', security='apiKey')
     @api.marshal_with(_box)
     def update(self, public_id):
         """get a box given its identifier"""
@@ -71,3 +71,17 @@ class Box(Resource):
             db.session.delete(box)
             db.session.commit()
             return redirect("/")
+
+    # READ
+    # get the box driver
+    @api.route('/foodOrdered/<public_id>')
+    @api.param('public_id', 'box driver')
+    @api.doc('get the driver', security='apiKey')
+    @api.marshal_with(_box)
+    def get(self, public_id):
+        """get a driver given its identifier"""
+        driver = get_box_driver(public_id)
+        if not driver:
+            api.abort(404)
+        else:
+            return driver

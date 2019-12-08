@@ -28,6 +28,10 @@ def get_all_boxes():
 def get_a_box(public_id):
     return Box.query.filter_by(public_id=public_id).first()
 
+def get_box_driver(public_id):
+    box_driver = Box.query.filter_by(public_id=public_id).first()
+    return box_driver.driver
+
 def save_changes(data):
     # commits the changes to database
     db.session.add(data)
