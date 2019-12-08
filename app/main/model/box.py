@@ -1,4 +1,5 @@
-from app import db, flask_bcrypt
+from .. import flask_bcrypt
+from app import db
 from sqlalchemy.dialects.postgresql import JSON
 import datetime
 from app.main.model.blacklist import BlacklistToken
