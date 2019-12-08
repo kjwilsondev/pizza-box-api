@@ -5,7 +5,7 @@ from app.main import db
 from app.main.model.box import Box
 
 def save_new_box(data):
-    box = Box.query.filter_by(email=data['email']).first()
+    box = Box.query.filter_by(public_id=data['public_id']).first()
     if not box:
         new_box = Box(
             id=str(uuid.uuid4()),
