@@ -17,7 +17,6 @@ class Driver(db.Model):
     public_id = db.Column(db.String(100), unique=True)
     username = db.Column(db.String(50), unique=True)
     password_hash = db.Column(db.String(100))
-    restaurant = db.Column(db.String(100))
     destination = db.Column(db.String(100))
     num_boxes = db.Column(db.Integer, default=0)
     completion = db.Column(db.Boolean, default=False)
