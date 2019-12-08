@@ -22,7 +22,7 @@ from functools import wraps
 api = BoxDto.api
 _box = BoxDto.box
 
-@api.route('/')
+@api.route('/boxes')
 class BoxList(Resource):
     @api.doc('list_of_registered_boxes', security='apiKey')
     @api.marshal_list_with(_box, envelope='data')
@@ -33,7 +33,7 @@ class BoxList(Resource):
 
     @api.doc('create a new box')
     @api.response(201, 'Box successfully created.')
-    @api.expect(_user, validate=True)
+    @api.expect(_box, validate=True)
     # CREATE
     # create a box
     def post(self):

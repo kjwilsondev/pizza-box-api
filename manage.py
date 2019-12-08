@@ -3,6 +3,7 @@ import unittest
 
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
+from flask.ext.sqlalchemy import SQLAlchemy
 
 from app import blueprint
 from app.main.model import user
@@ -18,6 +19,10 @@ from flask_cors import CORS
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 CORS(app)
 app.register_blueprint(blueprint)
+
+#DATABASE
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 app.app_context().push()
 
