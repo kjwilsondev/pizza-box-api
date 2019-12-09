@@ -12,6 +12,7 @@ class Box(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     registered_on = db.Column(db.DateTime, nullable=False)
     trips = db.Column(db.Integer) # number of trips box has made
+    driver = db.Column(db.String, nullable=True)
     # TODO: Chain Restaurant = String
     # TODO: Number of Trips = Integer
     # TODO: Recent Users = array(queue) of last 5 users
